@@ -1,0 +1,32 @@
+{
+    "name": "mginstallable/installable",
+    "description": "installable package",
+    "authors": [
+        {
+            "name": "dibiY",
+            "email": "dibiyassine@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "mgInstallable\\installable\\": "src/"
+        },
+        "files": [
+            "src/Helpers/functions.php"
+        ]
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "mgInstallable\\installable\\Providers\\MgInstallableServiceProvider"
+            ]
+        }
+    }
+}

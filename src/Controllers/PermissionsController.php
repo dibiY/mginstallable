@@ -31,6 +31,6 @@ class PermissionsController extends Controller
             config('Installable.permissions')
         );
 
-        return view('vendor.Installable.permissions', compact('permissions'));
+        return view('vendor.installable.permissions', compact('permissions'));
     }
 }

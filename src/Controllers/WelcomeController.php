@@ -13,6 +13,6 @@ class WelcomeController extends Controller
      */
     public function welcome()
     {
-        return view('vendor.Installable.welcome');
+        return view('vendor.installable.welcome');
     }
 }

@@ -33,7 +33,7 @@ class EnvironmentController extends Controller
      */
     public function environmentMenu()
     {
-        return view('vendor.installable.environment');
+        return view('Installable::environment');
     }
 
     /**
@@ -45,7 +45,7 @@ class EnvironmentController extends Controller
     {
         $envConfig = $this->EnvironmentManager->getEnvContent();
 
-        return view('vendor.installable.environment-wizard', compact('envConfig'));
+        return view('Installable::environment-wizard', compact('envConfig'));
     }
 
     /**
@@ -57,7 +57,7 @@ class EnvironmentController extends Controller
     {
         $envConfig = $this->EnvironmentManager->getEnvContent();
 
-        return view('vendor.installable.environment-classic', compact('envConfig'));
+        return view('Installable::environment-classic', compact('envConfig'));
     }
 
     /**

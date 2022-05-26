@@ -1,4 +1,4 @@
-@extends('vendor.installable.layouts.master-update')
+@extends('layouts.master-update')
 
 @section('title', trans('installer_messages.updater.final.title'))
 @section('container')

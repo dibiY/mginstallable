@@ -51,7 +51,7 @@ class MgInstallableServiceProvider extends ServiceProvider
     protected function publishFiles()
     {
         $this->publishes([
-            __DIR__ . '/../Config/Installable.php' => base_path('config/Installable.php'),
+            __DIR__ . '/../Config/Installable.php' => config_path('Installable.php'),
         ], 'Installable');
 
         $this->publishes([
@@ -59,11 +59,11 @@ class MgInstallableServiceProvider extends ServiceProvider
         ], 'Installable');
 
         $this->publishes([
-            __DIR__ . '/../Views' => base_path('resources/views/vendor/installable'),
+            __DIR__ . '/../Views' => resource_path('views/vendor/installable'),
         ], 'Installable');
 
         $this->publishes([
-            __DIR__ . '/../Lang' => base_path('resources/lang'),
+            __DIR__ . '/../Lang' => resource_path('lang'),
         ], 'Installable');
     }
 }

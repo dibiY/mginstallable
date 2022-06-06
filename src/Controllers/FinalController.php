@@ -26,6 +26,6 @@ class FinalController extends Controller
 
         event(new InstallableFinished);
 
-        return view('Installable::finished', compact('finalMessages', 'finalStatusMessage', 'finalEnvFile'));
+        return view('vendor.installable.finished', compact('finalMessages', 'finalStatusMessage', 'finalEnvFile'));
     }
 }

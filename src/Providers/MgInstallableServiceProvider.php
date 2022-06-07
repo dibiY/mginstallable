@@ -23,7 +23,12 @@ class MgInstallableServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . '/../Config/Installable.php', 'mginstallable');
+        $this->publishFiles();
+        $this->loadRoutesFrom(__DIR__ . '/../Routes/web.php');
+        $this->loadViewsFrom(__DIR__ . '/../Views', 'mginstallable');
+        $this->loadTranslationsFrom(__DIR__ . '/../Lang', 'mginstallable');
+
+        //$this->mergeConfigFrom(__DIR__ . '/../Config/Installable.php', 'mginstallable');
     }
 
     /**
@@ -33,16 +38,9 @@ class MgInstallableServiceProvider extends ServiceProvider
      */
     public function boot(Router $router)
     {
-        $this->loadRoutesFrom(__DIR__ . '/../Routes/web.php');
-        $this->loadViewsFrom(__DIR__ . '/../Views', 'mginstallable');
-        $this->loadTranslationsFrom(__DIR__ . '/../Lang', 'mginstallable');
 
         $router->middlewareGroup('install', [CanInstall::class]);
         $router->middlewareGroup('update', [CanUpdate::class]);
-
-        if ($this->app->runningInConsole()) {
-            $this->publishFiles();
-        }
     }
 
     /**

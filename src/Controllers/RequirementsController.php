@@ -1,9 +1,9 @@
 <?php
 
-namespace mgInstallable\installable\Controllers;
+namespace Dibiy\MgInstallable\Controllers;
 
 use Illuminate\Routing\Controller;
-use mgInstallable\installable\Helpers\RequirementsChecker;
+use Dibiy\MgInstallable\Helpers\RequirementsChecker;
 
 class RequirementsController extends Controller
 {

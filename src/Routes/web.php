@@ -1,6 +1,6 @@
 <?php
 
-Route::group(['prefix' => 'install', 'as' => 'Installable::', 'namespace' => 'mgInstallable\installable\Controllers', 'middleware' => ['web', 'install']], function () {
+Route::group(['prefix' => 'install', 'as' => 'Installable::', 'namespace' => 'Dibiy\MgInstallable\Controllers', 'middleware' => ['web', 'install']], function () {
     Route::get('/', [
         'as' => 'welcome',
         'uses' => 'WelcomeController@welcome',
@@ -52,7 +52,7 @@ Route::group(['prefix' => 'install', 'as' => 'Installable::', 'namespace' => 'mg
     ]);
 });
 
-Route::group(['prefix' => 'update', 'as' => 'LaravelUpdater::', 'namespace' => 'mgInstallable\installable\Controllers', 'middleware' => 'web'], function () {
+Route::group(['prefix' => 'update', 'as' => 'LaravelUpdater::', 'namespace' => 'Dibiy\MgInstallable\Controllers', 'middleware' => 'web'], function () {
     Route::group(['middleware' => 'update'], function () {
         Route::get('/', [
             'as' => 'welcome',

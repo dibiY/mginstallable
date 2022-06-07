@@ -1,14 +1,14 @@
 <?php
 
-namespace mgInstallable\installable\Controllers;
+namespace Dibiy\MgInstallable\Controllers;
 
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\DB;
-use mgInstallable\installable\Events\EnvironmentSaved;
-use mgInstallable\installable\Helpers\EnvironmentManager;
+use Dibiy\MgInstallable\Events\EnvironmentSaved;
+use Dibiy\MgInstallable\Helpers\EnvironmentManager;
 use Validator;
 
 class EnvironmentController extends Controller

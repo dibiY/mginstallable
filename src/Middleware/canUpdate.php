@@ -1,12 +1,12 @@
 <?php
 
-namespace mgInstallable\installable\Middleware;
+namespace Dibiy\MgInstallable\Middleware;
 
 use Closure;
 
 class canUpdate
 {
-    use \mgInstallable\installable\Helpers\MigrationsHelper;
+    use \Dibiy\MgInstallable\Helpers\MigrationsHelper;
 
     /**
      * Handle an incoming request.

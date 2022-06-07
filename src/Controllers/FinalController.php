@@ -1,21 +1,21 @@
 <?php
 
-namespace mgInstallable\installable\Controllers;
+namespace Dibiy\MgInstallable\Controllers;
 
 use Illuminate\Routing\Controller;
-use mgInstallable\installable\Events\InstallableFinished;
-use mgInstallable\installable\Helpers\EnvironmentManager;
-use mgInstallable\installable\Helpers\FinalInstallManager;
-use mgInstallable\installable\Helpers\InstalledFileManager;
+use Dibiy\MgInstallable\Events\InstallableFinished;
+use Dibiy\MgInstallable\Helpers\EnvironmentManager;
+use Dibiy\MgInstallable\Helpers\FinalInstallManager;
+use Dibiy\MgInstallable\Helpers\InstalledFileManager;
 
 class FinalController extends Controller
 {
     /**
      * Update installed file and display finished view.
      *
-     * @param \mgInstallable\installable\Helpers\InstalledFileManager $fileManager
-     * @param \mgInstallable\installable\Helpers\FinalInstallManager $finalInstall
-     * @param \mgInstallable\installable\Helpers\EnvironmentManager $environment
+     * @param \Dibiy\MgInstallable\Helpers\InstalledFileManager $fileManager
+     * @param \Dibiy\MgInstallable\Helpers\FinalInstallManager $finalInstall
+     * @param \Dibiy\MgInstallable\Helpers\EnvironmentManager $environment
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function finish(InstalledFileManager $fileManager, FinalInstallManager $finalInstall, EnvironmentManager $environment)

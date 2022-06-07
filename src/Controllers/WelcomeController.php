@@ -1,6 +1,6 @@
 <?php
 
-namespace mgInstallable\installable\Controllers;
+namespace Dibiy\MgInstallable\Controllers;
 
 use Illuminate\Routing\Controller;
 

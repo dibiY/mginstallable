@@ -13,7 +13,7 @@
     },
     "autoload": {
         "psr-4": {
-            "mgInstallable\\installable\\": "src/"
+            "Dibiy\\MgInstallable\\": "src/"
         },
         "files": [
             "src/Helpers/functions.php"
@@ -25,7 +25,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "mgInstallable\\installable\\Providers\\MgInstallableServiceProvider"
+                "Dibiy\\MgInstallable\\Providers\\MgInstallableServiceProvider"
             ]
         }
     }

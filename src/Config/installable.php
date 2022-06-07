@@ -17,7 +17,7 @@ return [
     ],
     'final' => [
         'key' => true,
-        'publish' => false,
+        'publish' => true,
     ],
     'requirements' => [
         'php' => [

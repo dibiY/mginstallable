@@ -1,9 +1,9 @@
 <?php
 
-namespace mgInstallable\installable\Controllers;
+namespace Dibiy\MgInstallable\Controllers;
 
 use Illuminate\Routing\Controller;
-use mgInstallable\installable\Helpers\PermissionsChecker;
+use Dibiy\MgInstallable\Helpers\PermissionsChecker;
 
 class PermissionsController extends Controller
 {

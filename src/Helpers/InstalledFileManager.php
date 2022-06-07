@@ -1,6 +1,6 @@
 <?php
 
-namespace mgInstallable\installable\Helpers;
+namespace Dibiy\MgInstallable\Helpers;
 
 class InstalledFileManager
 {

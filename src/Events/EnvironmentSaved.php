@@ -1,6 +1,6 @@
 <?php
 
-namespace mgInstallable\installable\Events;
+namespace Dibiy\MgInstallable\Events;
 
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Foundation\Events\Dispatchable;

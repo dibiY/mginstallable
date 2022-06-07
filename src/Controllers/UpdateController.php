@@ -1,14 +1,14 @@
 <?php
 
-namespace mgInstallable\installable\Controllers;
+namespace Dibiy\MgInstallable\Controllers;
 
 use Illuminate\Routing\Controller;
-use mgInstallable\installable\Helpers\DatabaseManager;
-use mgInstallable\installable\Helpers\InstalledFileManager;
+use Dibiy\MgInstallable\Helpers\DatabaseManager;
+use Dibiy\MgInstallable\Helpers\InstalledFileManager;
 
 class UpdateController extends Controller
 {
-    use \mgInstallable\installable\Helpers\MigrationsHelper;
+    use \Dibiy\MgInstallable\Helpers\MigrationsHelper;
 
     /**
      * Display the updater welcome page.

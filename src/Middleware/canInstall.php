@@ -1,6 +1,6 @@
 <?php
 
-namespace mgInstallable\installable\Middleware;
+namespace Dibiy\MgInstallable\Middleware;
 
 use Closure;
 use Redirect;

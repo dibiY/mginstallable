@@ -17,7 +17,7 @@ class UpdateController extends Controller
      */
     public function welcome()
     {
-        return view('vendor.installable.update.welcome');
+        return view('vendor.mginstallable.update.welcome');
     }
 
     /**
@@ -30,7 +30,7 @@ class UpdateController extends Controller
         $migrations = $this->getMigrations();
         $dbMigrations = $this->getExecutedMigrations();
 
-        return view('vendor.installable.update.overview', ['numberOfUpdatesPending' => count($migrations) - count($dbMigrations)]);
+        return view('vendor.mginstallable.update.overview', ['numberOfUpdatesPending' => count($migrations) - count($dbMigrations)]);
     }
 
     /**
@@ -57,6 +57,6 @@ class UpdateController extends Controller
     {
         $fileManager->update();
 
-        return view('vendor.installable.update.finished');
+        return view('vendor.mginstallable.update.finished');
     }
 }

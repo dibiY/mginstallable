@@ -33,7 +33,7 @@ class EnvironmentController extends Controller
      */
     public function environmentMenu()
     {
-        return view('vendor.installable.environment');
+        return view('vendor.mginstallable.environment');
     }
 
     /**
@@ -45,7 +45,7 @@ class EnvironmentController extends Controller
     {
         $envConfig = $this->EnvironmentManager->getEnvContent();
 
-        return view('vendor.installable.environment-wizard', compact('envConfig'));
+        return view('vendor.mginstallable.environment-wizard', compact('envConfig'));
     }
 
     /**
@@ -57,7 +57,7 @@ class EnvironmentController extends Controller
     {
         $envConfig = $this->EnvironmentManager->getEnvContent();
 
-        return view('vendor.installable.environment-classic', compact('envConfig'));
+        return view('vendor.mginstallable.environment-classic', compact('envConfig'));
     }
 
     /**
@@ -73,7 +73,7 @@ class EnvironmentController extends Controller
 
         event(new EnvironmentSaved($input));
 
-        return $redirect->route('vendor.installable.environmentClassic')
+        return $redirect->route('vendor.mginstallable.environmentClassic')
             ->with(['message' => $message]);
     }
 
@@ -94,11 +94,11 @@ class EnvironmentController extends Controller
         $validator = Validator::make($request->all(), $rules, $messages);
 
         if ($validator->fails()) {
-            return $redirect->route('vendor.installable.environmentWizard')->withInput()->withErrors($validator->errors());
+            return $redirect->route('vendor.mginstallable.environmentWizard')->withInput()->withErrors($validator->errors());
         }
 
         if (!$this->checkDatabaseConnection($request)) {
-            return $redirect->route('vendor.installable.environmentWizard')->withInput()->withErrors([
+            return $redirect->route('vendor.mginstallable.environmentWizard')->withInput()->withErrors([
                 'database_connection' => trans('installer_messages.environment.wizard.form.db_connection_failed'),
             ]);
         }
@@ -107,7 +107,7 @@ class EnvironmentController extends Controller
 
         event(new EnvironmentSaved($request));
 
-        return $redirect->route('vendor.installable.database')
+        return $redirect->route('vendor.mginstallable.database')
             ->with(['results' => $results]);
     }
 

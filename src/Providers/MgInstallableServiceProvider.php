@@ -27,8 +27,7 @@ class MgInstallableServiceProvider extends ServiceProvider
         $this->loadRoutesFrom(__DIR__ . '/../Routes/web.php');
         $this->loadViewsFrom(__DIR__ . '/../Views', 'mginstallable');
         $this->loadTranslationsFrom(__DIR__ . '/../Lang', 'mginstallable');
-
-        //$this->mergeConfigFrom(__DIR__ . '/../Config/Installable.php', 'mginstallable');
+        $this->mergeConfigFrom(__DIR__ . '/../Config/Installable.php', 'mginstallable');
     }
 
     /**

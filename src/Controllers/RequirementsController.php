@@ -34,6 +34,6 @@ class RequirementsController extends Controller
             config('Installable.requirements')
         );
 
-        return view('vendor.installable.requirements', compact('requirements', 'phpSupportInfo'));
+        return view('vendor.mginstallable.requirements', compact('requirements', 'phpSupportInfo'));
     }
 }

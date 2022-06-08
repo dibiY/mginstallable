@@ -17,7 +17,7 @@ return [
     ],
     'final' => [
         'key' => true,
-        'publish' => true,
+        'publish' => false,
     ],
     'requirements' => [
         'php' => [
@@ -105,6 +105,7 @@ return [
             'route' => [
                 'name' => 'welcome',
                 'data' => [],
+                'message' => 'welcome'
             ],
             'abort' => [
                 'type' => '404',
@@ -125,7 +126,7 @@ return [
     | route, abort, dump, 404, default, ''
     |
     */
-    'installedAlreadyAction' => '',
+    'installedAlreadyAction' => 'route',
 
     /*
     |--------------------------------------------------------------------------

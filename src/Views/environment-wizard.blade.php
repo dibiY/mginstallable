@@ -1,4 +1,4 @@
-@extends('vendor.mginstallable.layouts.master')
+@extends('vendor.mgmginstallable.layouts.master')
 
 @section('template_title')
 {{ trans('installer_messages.environment.wizard.templateTitle') }}
@@ -33,7 +33,7 @@
         {{ trans('installer_messages.environment.wizard.tabs.application') }}
     </label>
 
-    <form method="post" action="{{ route('Installable::environmentSaveWizard') }}" class="tabs-wrap">
+    <form method="post" action="{{ route('mginstallable::environmentSaveWizard') }}" class="tabs-wrap">
         <div class="tab" id="tab1content">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 

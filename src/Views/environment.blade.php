@@ -1,4 +1,4 @@
-@extends('vendor.mginstallable.layouts.master')
+@extends('vendor.mgmginstallable.layouts.master')
 
 @section('template_title')
 {{ trans('installer_messages.environment.menu.templateTitle') }}
@@ -15,10 +15,10 @@
     {!! trans('installer_messages.environment.menu.desc') !!}
 </p>
 <div class="buttons">
-    <a href="{{ route('Installable::environmentWizard') }}" class="button button-wizard">
+    <a href="{{ route('mginstallable::environmentWizard') }}" class="button button-wizard">
         <i class="fa fa-sliders fa-fw" aria-hidden="true"></i> {{ trans('installer_messages.environment.menu.wizard-button') }}
     </a>
-    <a href="{{ route('Installable::environmentClassic') }}" class="button button-classic">
+    <a href="{{ route('mginstallable::environmentClassic') }}" class="button button-classic">
         <i class="fa fa-code fa-fw" aria-hidden="true"></i> {{ trans('installer_messages.environment.menu.classic-button') }}
     </a>
 </div>

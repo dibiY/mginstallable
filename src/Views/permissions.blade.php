@@ -1,4 +1,4 @@
-@extends('vendor.mginstallable.layouts.master')
+@extends('vendor.mgmginstallable.layouts.master')
 
 @section('template_title')
 {{ trans('installer_messages.permissions.templateTitle') }}
@@ -25,7 +25,7 @@
 
 @if ( ! isset($permissions['errors']))
 <div class="buttons">
-    <a href="{{ route('Installable::environment') }}" class="button">
+    <a href="{{ route('mginstallable::environment') }}" class="button">
         {{ trans('installer_messages.permissions.next') }}
         <i class="fa fa-angle-right fa-fw" aria-hidden="true"></i>
     </a>

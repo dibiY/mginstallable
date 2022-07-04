@@ -1,4 +1,4 @@
-@extends('vendor.mginstallable.layouts.master')
+@extends('vendor.mgmginstallable.layouts.master')
 
 @section('template_title')
 {{ trans('installer_messages.final.templateTitle') }}

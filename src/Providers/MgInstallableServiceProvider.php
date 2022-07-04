@@ -51,18 +51,18 @@ class MgInstallableServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__ . '/../Config/Installable.php' => config_path('Installable.php'),
-        ], 'config');
+        ], 'mginstallable');
 
         $this->publishes([
             __DIR__ . '/../assets' => public_path('mginstallable'),
-        ], 'assets');
+        ], 'mginstallable');
 
         $this->publishes([
             __DIR__ . '/../Views' => resource_path('views/vendor/mginstallable'),
-        ], 'views');
+        ], 'mginstallable');
 
         $this->publishes([
             __DIR__ . '/../Lang' => resource_path('lang'),
-        ], 'lang');
+        ], 'mginstallable');
     }
 }

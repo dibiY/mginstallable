@@ -27,11 +27,11 @@
             </div>
             <ul class="step">
                 <li class="step__divider"></li>
-                <li class="step__item {{ isActive('vendor.mgmginstallable.final') }}">
+                <li class="step__item {{ isActive('vendor.mginstallable.final') }}">
                     <i class="step__icon fa fa-server" aria-hidden="true"></i>
                 </li>
                 <li class="step__divider"></li>
-                <li class="step__item {{ isActive('vendor.mgmginstallable.environment')}} {{ isActive('vendor.mgmginstallable.environmentWizard')}} {{ isActive('vendor.mgmginstallable.environmentClassic')}}">
+                <li class="step__item {{ isActive('vendor.mginstallable.environment')}} {{ isActive('vendor.mginstallable.environmentWizard')}} {{ isActive('vendor.mginstallable.environmentClassic')}}">
                     @if(Request::is('install/environment') || Request::is('install/environment/wizard') || Request::is('install/environment/classic') )
                     <a href="{{ route('mginstallable::environment') }}">
                         <i class="step__icon fa fa-cog" aria-hidden="true"></i>
@@ -41,7 +41,7 @@
                     @endif
                 </li>
                 <li class="step__divider"></li>
-                <li class="step__item {{ isActive('vendor.mgmginstallable.permissions') }}">
+                <li class="step__item {{ isActive('vendor.mginstallable.permissions') }}">
                     @if(Request::is('install/permissions') || Request::is('install/environment') || Request::is('install/environment/wizard') || Request::is('install/environment/classic') )
                     <a href="{{ route('mginstallable::permissions') }}">
                         <i class="step__icon fa fa-key" aria-hidden="true"></i>
@@ -51,7 +51,7 @@
                     @endif
                 </li>
                 <li class="step__divider"></li>
-                <li class="step__item {{ isActive('vendor.mgmginstallable.requirements') }}">
+                <li class="step__item {{ isActive('vendor.mginstallable.requirements') }}">
                     @if(Request::is('install') || Request::is('install/requirements') || Request::is('install/permissions') || Request::is('install/environment') || Request::is('install/environment/wizard') || Request::is('install/environment/classic') )
                     <a href="{{ route('mginstallable::requirements') }}">
                         <i class="step__icon fa fa-list" aria-hidden="true"></i>
@@ -61,7 +61,7 @@
                     @endif
                 </li>
                 <li class="step__divider"></li>
-                <li class="step__item {{ isActive('vendor.mgmginstallable.welcome') }}">
+                <li class="step__item {{ isActive('vendor.mginstallable.welcome') }}">
                     @if(Request::is('install') || Request::is('install/requirements') || Request::is('install/permissions') || Request::is('install/environment') || Request::is('install/environment/wizard') || Request::is('install/environment/classic') )
                     <a href="{{ route('mginstallable::welcome') }}">
                         <i class="step__icon fa fa-home" aria-hidden="true"></i>

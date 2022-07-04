@@ -24,7 +24,7 @@ class MgInstallableServiceProvider extends ServiceProvider
     public function register()
     {
         $this->publishFiles();
-        $this->loadRoutesFrom(__DIR__ . '/../Routes/web.php');
+        $this->loadRoutesFrom(__DIR__ . '/../Routes/web.php', 'mginstallable');
         $this->loadViewsFrom(__DIR__ . '/../Views', 'mginstallable');
         $this->loadTranslationsFrom(__DIR__ . '/../Lang', 'mginstallable');
         $this->mergeConfigFrom(__DIR__ . '/../Config/Installable.php', 'mginstallable');

@@ -103,7 +103,7 @@ return [
     'installed' => [
         'redirectOptions' => [
             'route' => [
-                'name' => 'welcome',
+                'name' => 'Installable::welcome',
                 'data' => [],
                 'message' => 'welcome'
             ],

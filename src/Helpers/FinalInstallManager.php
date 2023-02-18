@@ -2,7 +2,9 @@
 
 namespace Dibiy\MgInstallable\Helpers;
 
+use DateTime;
 use Exception;
+use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Artisan;
 use Symfony\Component\Console\Output\BufferedOutput;
 
@@ -19,6 +21,7 @@ class FinalInstallManager
 
         $this->generateKey($outputLog);
         $this->publishVendorAssets($outputLog);
+        $this->createKeyOfAppApi();
 
         return $outputLog->fetch();
     }
@@ -32,7 +35,7 @@ class FinalInstallManager
     private static function generateKey(BufferedOutput $outputLog)
     {
         try {
-            if (config('Installable.final.key')) {
+            if (config('mginstallable.final.key')) {
                 Artisan::call('key:generate', ['--force' => true], $outputLog);
             }
         } catch (Exception $e) {
@@ -51,7 +54,7 @@ class FinalInstallManager
     private static function publishVendorAssets(BufferedOutput $outputLog)
     {
         try {
-            if (config('Installable.final.publish')) {
+            if (config('mginstallable.final.publish')) {
                 Artisan::call('vendor:publish', ['--all' => true], $outputLog);
             }
         } catch (Exception $e) {
@@ -75,5 +78,16 @@ class FinalInstallManager
             'message' => $message,
             'dbOutputLog' => $outputLog->fetch(),
         ];
+    }
+
+    private static function createKeyOfAppApi()
+    {
+        $urlApi="http://maagance.test/check-installer/public/api/";
+        $client = new Client();
+        $date=new DateTime();
+        $dateString= $date->format('YmdHis');
+        $installedAppName="exampleapp".$dateString;
+        $url = $urlApi."apps/".$installedAppName."/create";
+        $client->get($url);
     }
 }

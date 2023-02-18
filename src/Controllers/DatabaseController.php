@@ -29,7 +29,7 @@ class DatabaseController extends Controller
     {
         $response = $this->databaseManager->migrateAndSeed();
 
-        return redirect()->route('vendor.mginstallable.final')
+        return redirect()->route('Installable::final')
             ->with(['message' => $response]);
     }
 }

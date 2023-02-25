@@ -25,6 +25,8 @@
 <p><strong><small>{{ trans('installer_messages.final.env') }}</small></strong></p>
 <pre><code>{{ $finalEnvFile }}</code></pre>
 
+
+
 <div class="buttons">
 	<a href="{{ url('/') }}" class="button">{{ trans('installer_messages.final.exit') }}</a>
 </div>

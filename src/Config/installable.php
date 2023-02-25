@@ -48,6 +48,16 @@ return [
         'bootstrap/cache/'       => '775',
     ],
 
+    "checkLicense"=>[
+        'check_license_installer_api'=>"http://maagance.test/check-installer/public/api/",
+        'form'=>[
+            'rules'=>[
+                'app_name' => 'required|string|max:50',
+                'app_key' => 'required|string'
+            ]
+        ]
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Environment Form Wizard Validation Rules & Messages
@@ -103,7 +113,7 @@ return [
     'installed' => [
         'redirectOptions' => [
             'route' => [
-                'name' => 'welcome',
+                'name' => 'mginstallable::welcome',
                 'data' => [],
                 'message' => 'welcome'
             ],

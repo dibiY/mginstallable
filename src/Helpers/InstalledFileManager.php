@@ -37,4 +37,23 @@ class InstalledFileManager
     {
         return $this->create();
     }
+
+
+    public function createCheckLicenseFile($data)
+    {
+        $licenseFile = storage_path('.license');
+
+        if (!file_exists($licenseFile)) {
+            $message=$data->name.": \n";
+            $message.=$data->key."\n";
+            file_put_contents($licenseFile, $message);
+        } else {
+            $message=$data->name.": \n";
+            $message.=$data->key."\n";
+            file_put_contents($licenseFile, $message . PHP_EOL, FILE_APPEND | LOCK_EX);
+        }
+
+        return $message;
+
+    }
 }

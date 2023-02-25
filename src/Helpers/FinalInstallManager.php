@@ -2,10 +2,10 @@
 
 namespace Dibiy\MgInstallable\Helpers;
 
+
 use Exception;
 use Illuminate\Support\Facades\Artisan;
 use Symfony\Component\Console\Output\BufferedOutput;
-
 class FinalInstallManager
 {
     /**
@@ -19,7 +19,6 @@ class FinalInstallManager
 
         $this->generateKey($outputLog);
         $this->publishVendorAssets($outputLog);
-
         return $outputLog->fetch();
     }
 
@@ -32,7 +31,7 @@ class FinalInstallManager
     private static function generateKey(BufferedOutput $outputLog)
     {
         try {
-            if (config('Installable.final.key')) {
+            if (config('mginstallable.final.key')) {
                 Artisan::call('key:generate', ['--force' => true], $outputLog);
             }
         } catch (Exception $e) {
@@ -51,7 +50,7 @@ class FinalInstallManager
     private static function publishVendorAssets(BufferedOutput $outputLog)
     {
         try {
-            if (config('Installable.final.publish')) {
+            if (config('mginstallable.final.publish')) {
                 Artisan::call('vendor:publish', ['--all' => true], $outputLog);
             }
         } catch (Exception $e) {
@@ -76,4 +75,5 @@ class FinalInstallManager
             'dbOutputLog' => $outputLog->fetch(),
         ];
     }
+
 }

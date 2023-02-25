@@ -2,12 +2,10 @@
 
 namespace Dibiy\MgInstallable\Helpers;
 
-use DateTime;
+
 use Exception;
-use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Artisan;
 use Symfony\Component\Console\Output\BufferedOutput;
-
 class FinalInstallManager
 {
     /**
@@ -21,8 +19,6 @@ class FinalInstallManager
 
         $this->generateKey($outputLog);
         $this->publishVendorAssets($outputLog);
-        $this->createKeyOfAppApi();
-
         return $outputLog->fetch();
     }
 
@@ -80,14 +76,4 @@ class FinalInstallManager
         ];
     }
 
-    private static function createKeyOfAppApi()
-    {
-        $urlApi="http://maagance.test/check-installer/public/api/";
-        $client = new Client();
-        $date=new DateTime();
-        $dateString= $date->format('YmdHis');
-        $installedAppName="exampleapp".$dateString;
-        $url = $urlApi."apps/".$installedAppName."/create";
-        $client->get($url);
-    }
 }

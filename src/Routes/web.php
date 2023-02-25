@@ -2,10 +2,21 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::group(['prefix' => 'install', 'as' => 'Installable::', 'namespace' => 'Dibiy\MgInstallable\Controllers', 'middleware' => ['web', 'install']], function () {
+Route::group(['prefix' => 'install', 'as' => 'mginstallable::', 'namespace' => 'Dibiy\MgInstallable\Controllers', 'middleware' => ['web', 'install']], function () {
+    
     Route::get('/', [
         'as' => 'welcome',
         'uses' => 'WelcomeController@welcome',
+    ]);
+
+    Route::get('license', [
+        'as' => 'checkLicenseForm',
+        'uses' => 'CheckLicenseController@checkLicenseForm',
+    ]);
+
+    Route::post('license', [
+        'as' => 'checkLicense',
+        'uses' => 'CheckLicenseController@checkLicencseKey',
     ]);
 
     Route::get('environment', [

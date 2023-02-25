@@ -28,6 +28,28 @@ return [
 
     /*
      *
+     * license page translations.
+     *
+     */
+    'checkLicense' => [
+        'templateTitle' => 'Étape 3 | License',
+        'title' => 'License',
+        'next' => 'Configurer l\'Environment',
+        'form' => [
+            'app_name_placeholder'=>'Nom d\'app',
+            'app_key_placeholder'=>'Clé license',
+            'app_name_label'=>'Nom d\'app',
+            'app_key'=>'Clé license',
+            'name_required' => 'Un nom d\'app est requis.',
+            'key_required' => 'la clé d\'app est requis.',
+            'buttons'=> [
+                'check'=>'Verifier la clé de license'
+            ]
+        ]
+    ],
+
+    /*
+     *
      * Requirements page translations.
      *
      */
@@ -45,7 +67,7 @@ return [
     'permissions' => [
         'templateTitle' => 'Étape 2 | Permissions',
         'title' => 'Permissions',
-        'next' => 'Configurer l\'Environment',
+        'next' => 'Vérifier la license',
     ],
 
     /*
@@ -55,14 +77,14 @@ return [
      */
     'environment' => [
         'menu' => [
-            'templateTitle' => 'Étape 3 | Paramètres d\'environnement',
+            'templateTitle' => 'Étape 4 | Paramètres d\'environnement',
             'title' => 'Paramètres d\'environnement',
             'desc' => 'Veuillez sélectionner comment vous souhaitez configurer les applications <code>.env</code> file.',
             'wizard-button' => 'Configuration de l\'assistant de formulaire',
             'classic-button' => 'Éditeur de texte classique',
         ],
         'wizard' => [
-            'templateTitle' => 'Étape 3 | Paramètres d\'environnement | Assistant guidé',
+            'templateTitle' => 'Étape 4 | Paramètres d\'environnement | Assistant guidé',
             'title' => 'Assitant <code>.env</code> Guidé',
             'tabs' => [
                 'environment' => 'Environnement',
@@ -156,7 +178,7 @@ return [
             ],
         ],
         'classic' => [
-            'templateTitle' => 'Étape 3 | Paramètres d\'environnement | Editeur Classique',
+            'templateTitle' => 'Étape 4 | Paramètres d\'environnement | Editeur Classique',
             'title' => 'Éditeur de texte classique',
             'save' => 'Enregistrer .env',
             'back' => 'Utiliser le formulaire',

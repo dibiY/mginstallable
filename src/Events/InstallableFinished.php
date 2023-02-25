@@ -6,6 +6,7 @@ use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
+
 class InstallableFinished
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
@@ -19,4 +20,5 @@ class InstallableFinished
     {
         //
     }
+
 }

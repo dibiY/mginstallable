@@ -27,6 +27,29 @@ return [
         'next'    => 'Check Requirements',
     ],
 
+
+        /*
+     *
+     * license page translations.
+     *
+     */
+    'checkLicense' => [
+        'templateTitle' => 'Step 3 | License',
+        'title' => 'License',
+        'next'    => 'Configure Environment',
+        'form' => [
+            'app_name_placeholder'=>'App Name',
+            'app_key_placeholder'=>'License Key',
+            'app_name_label'=>'App Name',
+            'app_key'=>'License Key',
+            'name_required' => 'Name of app is required.',
+            'key_required' => 'Key of app is required.',
+            'buttons'=> [
+                'check'=>'Verification License Key'
+            ]
+        ]
+    ],
+
     /*
      *
      * Requirements page translations.
@@ -46,7 +69,7 @@ return [
     'permissions' => [
         'templateTitle' => 'Step 2 | Permissions',
         'title' => 'Permissions',
-        'next' => 'Configure Environment',
+        'next' => 'Check License key',
     ],
 
     /*
@@ -56,14 +79,14 @@ return [
      */
     'environment' => [
         'menu' => [
-            'templateTitle' => 'Step 3 | Environment Settings',
+            'templateTitle' => 'Step 4 | Environment Settings',
             'title' => 'Environment Settings',
             'desc' => 'Please select how you want to configure the apps <code>.env</code> file.',
             'wizard-button' => 'Form Wizard Setup',
             'classic-button' => 'Classic Text Editor',
         ],
         'wizard' => [
-            'templateTitle' => 'Step 3 | Environment Settings | Guided Wizard',
+            'templateTitle' => 'Step 4 | Environment Settings | Guided Wizard',
             'title' => 'Guided <code>.env</code> Wizard',
             'tabs' => [
                 'environment' => 'Environment',
@@ -158,7 +181,7 @@ return [
             ],
         ],
         'classic' => [
-            'templateTitle' => 'Step 3 | Environment Settings | Classic Editor',
+            'templateTitle' => 'Step 4 | Environment Settings | Classic Editor',
             'title' => 'Classic Environment Editor',
             'save' => 'Save .env',
             'back' => 'Use Form Wizard',

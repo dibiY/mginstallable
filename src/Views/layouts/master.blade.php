@@ -30,10 +30,11 @@
                 <li class="step__item {{ isActive('vendor.mginstallable.final') }}">
                     <i class="step__icon fa fa-server" aria-hidden="true"></i>
                 </li>
+
                 <li class="step__divider"></li>
                 <li class="step__item {{ isActive('vendor.mginstallable.environment')}} {{ isActive('vendor.mginstallable.environmentWizard')}} {{ isActive('vendor.mginstallable.environmentClassic')}}">
                     @if(Request::is('install/environment') || Request::is('install/environment/wizard') || Request::is('install/environment/classic') )
-                    <a href="{{ route('Installable::environment') }}">
+                    <a href="{{ route('mginstallable::environment') }}">
                         <i class="step__icon fa fa-cog" aria-hidden="true"></i>
                     </a>
                     @else
@@ -41,9 +42,19 @@
                     @endif
                 </li>
                 <li class="step__divider"></li>
+                <li class="step__item {{ isActive('vendor.mginstallable.check-licenseForm')}} {{ isActive('vendor.mginstallable.environmentWizard')}} {{ isActive('vendor.mginstallable.environmentClassic')}}">
+                @if(Request::is('install/license') || Request::is('install/environment') || Request::is('install/environment/wizard') || Request::is('install/environment/classic') )
+                    <a href="{{ route('mginstallable::checkLicenseForm') }}">
+                        <i class="step__icon fa fa-balance-scale" aria-hidden="true"></i>
+                    </a>
+                    @else
+                    <i class="step__icon fa fa-balance-scale" aria-hidden="true"></i>
+                    @endif
+                </li>
+                <li class="step__divider"></li>
                 <li class="step__item {{ isActive('vendor.mginstallable.permissions') }}">
-                    @if(Request::is('install/permissions') || Request::is('install/environment') || Request::is('install/environment/wizard') || Request::is('install/environment/classic') )
-                    <a href="{{ route('Installable::permissions') }}">
+                @if(Request::is('install/permissions') || Request::is('install/license') || Request::is('install/environment') || Request::is('install/environment/wizard') || Request::is('install/environment/classic') )
+                    <a href="{{ route('mginstallable::permissions') }}">
                         <i class="step__icon fa fa-key" aria-hidden="true"></i>
                     </a>
                     @else
@@ -52,8 +63,8 @@
                 </li>
                 <li class="step__divider"></li>
                 <li class="step__item {{ isActive('vendor.mginstallable.requirements') }}">
-                    @if(Request::is('install') || Request::is('install/requirements') || Request::is('install/permissions') || Request::is('install/environment') || Request::is('install/environment/wizard') || Request::is('install/environment/classic') )
-                    <a href="{{ route('Installable::requirements') }}">
+                    @if(Request::is('install') || Request::is('install/requirements') || Request::is('install/permissions') || Request::is('install/license') || Request::is('install/environment') || Request::is('install/environment/wizard') || Request::is('install/environment/classic') )
+                    <a href="{{ route('mginstallable::requirements') }}">
                         <i class="step__icon fa fa-list" aria-hidden="true"></i>
                     </a>
                     @else
@@ -62,8 +73,8 @@
                 </li>
                 <li class="step__divider"></li>
                 <li class="step__item {{ isActive('vendor.mginstallable.welcome') }}">
-                    @if(Request::is('install') || Request::is('install/requirements') || Request::is('install/permissions') || Request::is('install/environment') || Request::is('install/environment/wizard') || Request::is('install/environment/classic') )
-                    <a href="{{ route('Installable::welcome') }}">
+                @if(Request::is('install') || Request::is('install/requirements') || Request::is('install/permissions') || Request::is('install/license') || Request::is('install/environment') || Request::is('install/environment/wizard') || Request::is('install/environment/classic') )
+                    <a href="{{ route('mginstallable::welcome') }}">
                         <i class="step__icon fa fa-home" aria-hidden="true"></i>
                     </a>
                     @else

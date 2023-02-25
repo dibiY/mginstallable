@@ -28,4 +28,5 @@ class FinalController extends Controller
 
         return view('vendor.mginstallable.finished', compact('finalMessages', 'finalStatusMessage', 'finalEnvFile'));
     }
+
 }

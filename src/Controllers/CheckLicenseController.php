@@ -45,7 +45,7 @@ class CheckLicenseController extends Controller
      */
     public function checkLicenseForm()
     {
-        return view('vendor.mginstallable.check-licenseForm');
+        return view('vendor.mginstallable.check-licenseForm')->with(['error_message'=>null]);
     }
 
     /**

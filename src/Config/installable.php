@@ -49,7 +49,7 @@ return [
     ],
 
     "checkLicense"=>[
-        'check_license_installer_api'=>"http://maagance.test/check-installer/public/api/",
+        'check_license_installer_api'=>"https://api.intel-design.net/api/",
         'form'=>[
             'rules'=>[
                 'app_name' => 'required|string|max:50',

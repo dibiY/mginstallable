@@ -27,7 +27,7 @@ class MgInstallableServiceProvider extends ServiceProvider
         $this->loadRoutesFrom(__DIR__ . '/../Routes/web.php', 'mginstallable');
         $this->loadViewsFrom(__DIR__ . '/../Views', 'mginstallable');
         $this->loadTranslationsFrom(__DIR__ . '/../Lang', 'mginstallable');
-        $this->mergeConfigFrom(__DIR__ . '/../Config/Installable.php', 'mginstallable');
+        $this->mergeConfigFrom(__DIR__ . '/../Config/installable.php', 'mginstallable');
     }
 
     /**
@@ -50,7 +50,7 @@ class MgInstallableServiceProvider extends ServiceProvider
     protected function publishFiles()
     {
         $this->publishes([
-            __DIR__ . '/../Config/Installable.php' => config_path('Installable.php'),
+            __DIR__ . '/../Config/installable.php' => config_path('installable.php'),
         ], 'mginstallable');
 
         $this->publishes([

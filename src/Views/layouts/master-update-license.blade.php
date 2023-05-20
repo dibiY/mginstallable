@@ -26,7 +26,7 @@
             </div>
             <ul class="step">
                 <li class="step__divider"></li>
-                <li class="step__item {{ isActive('LaravelUpdater::final') }}">
+                <li class="step__item {{ isActive('LicenseUpdater::final') }}">
                     <i class="step__icon fa fa-server" aria-hidden="true"></i>
                 </li>
                 <li class="step__divider"></li>

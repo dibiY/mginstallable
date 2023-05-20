@@ -73,7 +73,7 @@ Route::group(['prefix'=>'update_license', 'as' => 'LicenseUpdater::', 'namespace
         ]);
 
         Route::put('/', [
-            'as' => 'update_license',
+            'as' => 'check_update_license',
             'uses' => 'UpdateLicenseController@updateCheckLicense',
         ]);
 

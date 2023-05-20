@@ -11,7 +11,6 @@ use Dibiy\MgInstallable\Helpers\InstalledFileManager;
 
 class UpdateLicenseController extends Controller
 {
-    use \Dibiy\MgInstallable\Helpers\MigrationsHelper;
 
 
     /**

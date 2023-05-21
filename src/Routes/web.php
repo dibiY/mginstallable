@@ -71,7 +71,7 @@ Route::group(['prefix'=>'update-license', 'as' => 'LicenseUpdater::', 'namespace
             'as' => 'update-license.form',
             'uses' => 'UpdateLicenseController@formUpdateLicense'
         ]);
-        Route::put('/',[
+        Route::post('/',[
             'as' => 'update-license.check_update_license',
             'uses' => 'UpdateLicenseController@updateCheckLicense'
         ]);

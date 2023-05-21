@@ -17,7 +17,7 @@
 @endif
 @section('container')
 <div class="tabs tabs-full">
-    <form method="put" action="{{ route('LicenseUpdater::check_update_license') }}" class="tabs-wrap">
+    <form method="post" action="{{ route('LicenseUpdater::check_update_license') }}" class="tabs-wrap">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="form-group {{ $errors->has('app_name') ? ' has-error ' : '' }}">
             <label for="app_name">

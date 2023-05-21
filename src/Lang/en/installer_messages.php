@@ -39,13 +39,17 @@ return [
         'next'    => 'Configure Environment',
         'form' => [
             'app_name_placeholder'=>'App Name',
+            'app_email_placeholder'=>'App Email',
             'app_key_placeholder'=>'License Key',
             'app_name_label'=>'App Name',
+            'app_email_label'=>'App Email',
             'app_key'=>'License Key',
             'name_required' => 'Name of app is required.',
+            'email_required' => 'Email of app is required.',
             'key_required' => 'Key of app is required.',
             'buttons'=> [
-                'check'=>'Verification License Key'
+                'check'=>'Verification License Key',
+                'submit'=>'Submit request'
             ]
         ]
     ],
@@ -96,7 +100,9 @@ return [
             'form' => [
                 'name_required' => 'An environment name is required.',
                 'app_name_label' => 'App Name',
+                'app_email_label' => 'App Email',
                 'app_name_placeholder' => 'App Name',
+                'app_email_placeholder'=> 'App Email',
                 'app_environment_label' => 'App Environment',
                 'app_environment_label_local' => 'Local',
                 'app_environment_label_developement' => 'Development',

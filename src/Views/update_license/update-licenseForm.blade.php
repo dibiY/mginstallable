@@ -31,22 +31,21 @@
             </span>
             @endif
         </div>
-        <div class="form-group {{ $errors->has('app_key') ? ' has-error ' : '' }}">
-            <label for="app_key">
-                {{ trans('installer_messages.checkLicense.form.app_key') }}
+        <div class="form-group {{ $errors->has('email') ? ' has-error ' : '' }}">
+            <label for="email">
+                {{ trans('installer_messages.checkLicense.form.email') }}
             </label>
-            <textarea name="app_key" id="app_key" value="" placeholder="{{ trans('installer_messages.checkLicense.form.app_key_placeholder') }}" >
-            </textarea>
-            @if ($errors->has('app_key'))
+            <input type="text" name="email" id="email" value="" placeholder="{{ trans('installer_messages.environment.wizard.form.app_email_placeholder') }}" />
+            @if ($errors->has('email'))
             <span class="error-block">
                 <i class="fa fa-fw fa-exclamation-triangle" aria-hidden="true"></i>
-                {{ $errors->first('app_key') }}
+                {{ $errors->first('email') }}
             </span>
             @endif
         </div>
         <div class="buttons">
             <button class="button" type="submit">
-                {{ trans('installer_messages.checkLicense.form.buttons.check') }}
+                {{ trans('installer_messages.checkLicense.form.buttons.submit') }}
                 <i class="fa fa-angle-right fa-fw" aria-hidden="true"></i>
             </button>
         </div>

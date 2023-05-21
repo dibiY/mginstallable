@@ -34,7 +34,6 @@ class canInstall
 
                 case 'dump':
                     $dump = config('Installable.installed.redirectOptions.dump.data');
-                    dd($dump);
                     break;
 
                 case '404':

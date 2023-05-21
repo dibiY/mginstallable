@@ -6,6 +6,7 @@ use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 use Dibiy\MgInstallable\Middleware\canInstall;
 use Dibiy\MgInstallable\Middleware\canUpdate;
+use Dibiy\MgInstallable\Middleware\canUpdateLicense;
 
 class MgInstallableServiceProvider extends ServiceProvider
 {
@@ -40,6 +41,7 @@ class MgInstallableServiceProvider extends ServiceProvider
 
         $router->middlewareGroup('install', [CanInstall::class]);
         $router->middlewareGroup('update', [CanUpdate::class]);
+        $router->middlewareGroup('updateLicense', [canUpdateLicense::class]);
     }
 
     /**

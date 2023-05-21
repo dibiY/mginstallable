@@ -66,17 +66,17 @@ class UpdateLicenseController extends Controller
         $validator = Validator::make($request->all(), $rules, $messages);
 
         if ($validator->fails()) {
-            return $redirect->route('LicenseUpdater::form_update_license')->withInput()->withErrors($validator->errors());
+            return $redirect->route('LicenseUpdater::update-license.form')->withInput()->withErrors($validator->errors());
         }
         $inputs=$request->all();
         $response=$this->checkLicenseManager->checkLicenseKey($inputs);
         $object=(object) $response;
         if(array_key_exists("data",$response) && $object && $object->data && $object->data->active=="1"){
             $this->fileManager->createCheckLicenseFile($object->data);
-            return $redirect->route('LicenseUpdater::final');
+            return $redirect->route('LicenseUpdater::update-license.final');
         }
         $error_message=$object->message;
-        return $redirect->route('LicenseUpdater::form_update_license')->withInput()->withErrors([
+        return $redirect->route('LicenseUpdater::update-license.form')->withInput()->withErrors([
             'error_message'=>$error_message
         ]);
 

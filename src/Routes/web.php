@@ -65,22 +65,11 @@ Route::group(['prefix' => 'install', 'as' => 'mginstallable::', 'namespace' => '
     ]);
 });
 
-Route::group(['prefix'=>'update_license', 'as' => 'LicenseUpdater::', 'namespace' => 'Dibiy\MgInstallable\Controllers', 'middleware' => ['web', 'updateLicense']],function(){
-    Route::group(['middleware' => 'update_license'], function () {
-        Route::get('/', [
-            'as' => 'form_update_license',
-            'uses' => 'UpdateLicenseController@formUpdateLicense',
-        ]);
-
-        Route::put('/', [
-            'as' => 'check_update_license',
-            'uses' => 'UpdateLicenseController@updateCheckLicense',
-        ]);
-
-        Route::get('final', [
-            'as' => 'final',
-            'uses' => 'UpdateLicenseController@finish',
-        ]);
+Route::group(['prefix'=>'update-license', 'as' => 'LicenseUpdater::', 'namespace' => 'Dibiy\MgInstallable\Controllers', 'middleware' => ['web', 'updateLicense']],function(){
+    Route::group(['middleware' => 'update-license'], function () {
+        Route::get('/', 'UpdateLicenseController@formUpdateLicense')->name('update-license.form');
+        Route::put('/', 'UpdateLicenseController@updateCheckLicense')->name('update-license.check_update_license');
+        Route::get('/final', 'UpdateLicenseController@finish')->name('update-license.final');
     });
 });
 

@@ -78,6 +78,7 @@ class UpdateLicenseController extends Controller
             return $redirect->route('LicenseUpdater::update-license.final');
         }
         $error_message=$object->message;
+        dd($error_message);
         return $redirect->route('LicenseUpdater::update-license.form')->withInput()->withErrors([
             'error_message'=>$error_message
         ]);

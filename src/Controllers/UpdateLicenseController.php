@@ -43,7 +43,9 @@ class UpdateLicenseController extends Controller
      */
     public function formUpdateLicense()
     {
-        return view('vendor.mginstallable.update_license.update-licenseForm');
+        return view('vendor.mginstallable.update_license.update-licenseForm')->with([
+            'error_message'=>null
+        ]);
     }
 
 

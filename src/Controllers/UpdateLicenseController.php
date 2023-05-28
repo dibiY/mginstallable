@@ -61,7 +61,7 @@ class UpdateLicenseController extends Controller
 
         $rules = config('Installable.checkLicense.form.rules');
         $messages = [
-            'app_name' => trans('installer_messages.checkLicense.form.name_required'),
+            'app_domainName' => trans('installer_messages.checkLicense.form.domainName_required'),
             'app_key' => trans('installer_messages.checkLicense.form.key_required'),
         ];
 
@@ -78,7 +78,6 @@ class UpdateLicenseController extends Controller
             return $redirect->route('LicenseUpdater::update-license.final');
         }
         $error_message=$object->message;
-        dd($error_message);
         return $redirect->route('LicenseUpdater::update-license.form')->withInput()->withErrors([
             'error_message'=>$error_message
         ]);

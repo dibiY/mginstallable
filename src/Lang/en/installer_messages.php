@@ -44,7 +44,7 @@ return [
             'app_name_label'=>'App Name',
             'app_email_label'=>'App Email',
             'app_key'=>'License Key',
-            'name_required' => 'Name of app is required.',
+            'domainName_required' => 'Name of app is required.',
             'email_required' => 'Email of app is required.',
             'key_required' => 'Key of app is required.',
             'buttons'=> [
@@ -98,7 +98,7 @@ return [
                 'application' => 'Application',
             ],
             'form' => [
-                'name_required' => 'An environment name is required.',
+                'domainName_required' => 'An environment name is required.',
                 'app_name_label' => 'App Name',
                 'app_email_label' => 'App Email',
                 'app_name_placeholder' => 'App Name',

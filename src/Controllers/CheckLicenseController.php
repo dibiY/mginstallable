@@ -60,7 +60,7 @@ class CheckLicenseController extends Controller
 
         $rules = config('Installable.checkLicense.form.rules');
         $messages = [
-            'app_name' => trans('installer_messages.checkLicense.form.name_required'),
+            'app_domainName' => trans('installer_messages.checkLicense.form.domainName_required'),
             'app_key' => trans('installer_messages.checkLicense.form.key_required'),
         ];
 

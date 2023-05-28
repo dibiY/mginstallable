@@ -71,7 +71,7 @@ return [
                 'application' => 'แอพพลิเคชั่น',
             ],
             'form' => [
-                'name_required' => 'ต้องระบุชื่อสภาพแวดล้อม',
+                'domainName_required' => 'ต้องระบุชื่อสภาพแวดล้อม',
                 'app_name_label' => 'ชื่อแอป',
                 'app_name_placeholder' => 'ชื่อแอป',
                 'app_environment_label' => 'สภาพแวดล้อมของแอป',

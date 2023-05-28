@@ -19,15 +19,15 @@
 <div class="tabs tabs-full">
     <form method="post" action="{{ route('LicenseUpdater::update-license.check_update_license') }}" class="tabs-wrap">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-        <div class="form-group {{ $errors->has('app_name') ? ' has-error ' : '' }}">
-            <label for="app_name">
-                {{ trans('installer_messages.checkLicense.form.app_name_label') }}
+        <div class="form-group {{ $errors->has('app_domainName') ? ' has-error ' : '' }}">
+            <label for="app_domainName">
+                {{ trans('installer_messages.checkLicense.form.app_domainName_label') }}
             </label>
-            <input type="text" name="app_name" id="app_name" value="" placeholder="{{ trans('installer_messages.environment.wizard.form.app_name_placeholder') }}" />
-            @if ($errors->has('app_name'))
+            <input type="text" name="app_domainName" id="app_domainName" value="" placeholder="{{ trans('installer_messages.environment.wizard.form.app_domainName_placeholder') }}" />
+            @if ($errors->has('app_domainName'))
             <span class="error-block">
                 <i class="fa fa-fw fa-exclamation-triangle" aria-hidden="true"></i>
-                {{ $errors->first('app_name') }}
+                {{ $errors->first('app_domainName') }}
             </span>
             @endif
         </div>

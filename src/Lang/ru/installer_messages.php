@@ -63,7 +63,7 @@ return [
                 'application' => 'Приложение',
             ],
             'form' => [
-                'name_required' => 'Требуется имя среды.',
+                'domainName_required' => 'Требуется имя среды.',
                 'app_name_label' => 'Имя приложения',
                 'app_name_placeholder' => 'Имя приложения',
                 'app_environment_label' => 'Окружение приложения',

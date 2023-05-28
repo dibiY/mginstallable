@@ -42,7 +42,7 @@ return [
             'app_name_label'=>'Nom d\'app',
             'app_email_label'=>'Email d\'app',
             'app_key'=>'Clé license',
-            'name_required' => 'Un nom d\'app est requis.',
+            'domainName_required' => 'Un nom d\'app est requis.',
             'email_required' => 'Email d\'app est requis.',
             'key_required' => 'la clé d\'app est requis.',
             'buttons'=> [
@@ -96,7 +96,7 @@ return [
                 'application' => 'Application',
             ],
             'form' => [
-                'name_required' => 'Un nom d\'environnement est requis.',
+                'domainName_required' => 'Un nom d\'environnement est requis.',
                 'app_name_label' => 'App Name',
                 'app_email_label' => 'App Email',
                 'app_name_placeholder' => 'App Name',

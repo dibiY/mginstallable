@@ -34,7 +34,7 @@ return [
             'app_key_placeholder'=>'License Key',
             'app_name_label'=>'App Name',
             'app_key'=>'License Key',
-            'name_required' => 'Name of app is required.',
+            'domainName_required' => 'Name of app is required.',
             'key_required' => 'Key of app is required.',
             'buttons'=> [
                 'check'=>'Verification License Key'

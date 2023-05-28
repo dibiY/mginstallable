@@ -18,7 +18,7 @@ class CheckLicenseManager
             $url = $urlApi."verify-license";
             $response=$client->post($url,[
                 'json'=>[
-                    'name'=>$inputs['app_name'],
+                    'domainName'=>$inputs['app_domainName'],
                     'key'=>$inputs['app_key']
                 ]
             ]);

@@ -71,7 +71,7 @@ return [
                 'application' => 'Uygulama',
             ],
             'form' => [
-                'name_required' => 'Bir ortam adı gerekiyor.',
+                'domainName_required' => 'Bir ortam adı gerekiyor.',
                 'app_name_label' => 'Uygulama Adı',
                 'app_name_placeholder' => 'Uygulama Adı',
                 'app_environment_label' => 'Uygulama Ortamı',

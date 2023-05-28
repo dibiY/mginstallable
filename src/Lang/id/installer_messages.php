@@ -71,7 +71,7 @@ return [
                 'application' => 'Aplikasi',
             ],
             'form' => [
-                'name_required' => 'Lingkungan aplikasi harus ditetapkan',
+                'domainName_required' => 'Lingkungan aplikasi harus ditetapkan',
                 'app_name_label' => 'Nama Aplikasi',
                 'app_name_placeholder' => 'Nama Aplikasi',
                 'app_environment_label' => 'Lingkungan Aplikasi',

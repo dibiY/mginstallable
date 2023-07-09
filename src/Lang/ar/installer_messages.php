@@ -33,6 +33,7 @@ return [
             'app_name_placeholder'=>'App Name',
             'app_key_placeholder'=>'License Key',
             'app_name_label'=>'App Name',
+            'app_domainName_label'=>'App domaine Name',
             'app_key'=>'License Key',
             'domainName_required' => 'Name of app is required.',
             'key_required' => 'Key of app is required.',

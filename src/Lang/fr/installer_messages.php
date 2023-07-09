@@ -99,6 +99,7 @@ return [
             'form' => [
                 'domainName_required' => 'Un nom d\'environnement est requis.',
                 'app_name_label' => 'App Name',
+                'app_domainName_label'=> 'App domaine Name',
                 'app_email_label' => 'App Email',
                 'app_name_placeholder' => 'App Name',
                 'app_email_placeholder'=> 'App Email',

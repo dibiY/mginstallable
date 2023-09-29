@@ -71,15 +71,17 @@ class CheckLicenseController extends Controller
         }
         $inputs=$request->all();
         $response=$this->checkLicenseManager->checkLicenseKey($inputs);
-        $object=(object) $response;
-        if(array_key_exists("data",$response) && $object && $object->data){
-            $this->fileManager->createCheckLicenseFile($object->data);
-            return $redirect->route('mginstallable::environment');
+        if(is_array($response)){
+            $object=(object) $response;
+            if(array_key_exists("data",$response) && $object && $object->data){
+                $this->fileManager->createCheckLicenseFile($object->data);
+                return $redirect->route('mginstallable::environment');
+            }
+        }else{
+            $error_message=$response;
+            return $redirect->route('mginstallable::checkLicenseForm')->withInput()->withErrors([
+                'error_message'=>$error_message
+            ]);
         }
-        $error_message=$object->message;
-        return $redirect->route('mginstallable::checkLicenseForm')->withInput()->withErrors([
-            'error_message'=>$error_message
-        ]);
-
     }
 }

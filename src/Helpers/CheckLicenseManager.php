@@ -44,10 +44,35 @@ class CheckLicenseManager
             ];
 
         }catch(Exception $e){
-            return [
-                'status' => 'error',
-                'message' => $e->getMessage()
-            ];
+            return $this->getMessageError($e);
+        }
+    }
+
+    public function getMessageError($e){
+        if ($e->hasResponse()) {
+            $response = $e->getResponse();
+            $statusCode = $response->getStatusCode();
+            $body = $response->getBody()->getContents();
+    
+            // Check if it's a 400 Bad Request response
+            if ($statusCode === 400) {
+                $errorData = json_decode($body, true);
+                
+                if (isset($errorData['message'])) {
+                    $errorMessage = $errorData['message'];
+                    // Handle the specific error message here
+                    return "Error: $errorMessage";
+                } else {
+                    // Handle the error without a specific message
+                    return "Error: Bad Request";
+                }
+            } else {
+                // Handle other types of errors (e.g., 500 Internal Server Error)
+                return "Error: An unexpected error occurred.";
+            }
+        } else {
+            // Handle other request-related exceptions
+            return "Error: Unable to communicate with the server.";
         }
     }
 }

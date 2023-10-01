@@ -41,11 +41,12 @@ class EnvironmentController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function environmentWizard()
+    public function environmentWizard(Request $request)
     {
         $envConfig = $this->EnvironmentManager->getEnvContent();
+        $domainName=$this->EnvironmentManager->getDomainName($request);
 
-        return view('vendor.mginstallable.environment-wizard', compact('envConfig'));
+        return view('vendor.mginstallable.environment-wizard', compact('envConfig','domainName'));
     }
 
     /**

@@ -23,7 +23,8 @@
             <label for="app_domainName">
                 {{ trans('installer_messages.checkLicense.form.app_domainName_label') }}
             </label>
-            <input type="text" name="app_domainName" id="app_domainName" value="" placeholder="{{ trans('installer_messages.environment.wizard.form.app_domainName_placeholder') }}" />
+            <input type="text" name="app_domainName" id="app_domainName" value="{{domainName}}"
+            placeholder="{{ trans('installer_messages.environment.wizard.form.app_domainName_placeholder') }}" disabled='true' />
             @if ($errors->has('app_domainName'))
             <span class="error-block">
                 <i class="fa fa-fw fa-exclamation-triangle" aria-hidden="true"></i>

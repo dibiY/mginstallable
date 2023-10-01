@@ -20,9 +20,7 @@ class DatabaseManager
     {
         $outputLog = new BufferedOutput;
 
-        $this->sqlite($outputLog);
-
-        return $this->migrate($outputLog);
+        return $this->execDumpDB($outputLog);
     }
 
     /**
@@ -52,6 +50,17 @@ class DatabaseManager
     {
         try {
             Artisan::call('db:seed', ['--force' => true], $outputLog);
+        } catch (Exception $e) {
+            return $this->response($e->getMessage(), 'error', $outputLog);
+        }
+
+        return $this->response(trans('installer_messages.final.finished'), 'success', $outputLog);
+    }
+
+
+    private function execDumpDB(BufferedOutput $outputLog){
+        try {
+            Artisan::call('DumpDB:import', ['--force' => true], $outputLog);
         } catch (Exception $e) {
             return $this->response($e->getMessage(), 'error', $outputLog);
         }

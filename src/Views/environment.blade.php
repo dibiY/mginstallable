@@ -18,9 +18,6 @@
     <a href="{{ route('mginstallable::environmentWizard') }}" class="button button-wizard">
         <i class="fa fa-sliders fa-fw" aria-hidden="true"></i> {{ trans('installer_messages.environment.menu.wizard-button') }}
     </a>
-    <a href="{{ route('mginstallable::environmentClassic') }}" class="button button-classic">
-        <i class="fa fa-code fa-fw" aria-hidden="true"></i> {{ trans('installer_messages.environment.menu.classic-button') }}
-    </a>
 </div>
 
 @endsection

@@ -41,7 +41,8 @@
                 <label for="app_domainName">
                     {{ trans('installer_messages.environment.wizard.form.app_domainName_label') }}
                 </label>
-                <input type="text" name="app_domainName" id="app_domainName" value="" placeholder="{{ trans('installer_messages.environment.wizard.form.app_domainName_placeholder') }}" />
+                <input type="text" name="app_domainName" id="app_domainName" value="{{domainName}}"
+                 placeholder="{{ trans('installer_messages.environment.wizard.form.app_domainName_placeholder') }}" disabled='true' />
                 @if ($errors->has('app_domainName'))
                 <span class="error-block">
                     <i class="fa fa-fw fa-exclamation-triangle" aria-hidden="true"></i>
@@ -64,10 +65,10 @@
                 <div id="environment_text_input" style="display: none;">
                     <input type="text" name="environment_custom" id="environment_custom" placeholder="{{ trans('installer_messages.environment.wizard.form.app_environment_placeholder_other') }}" />
                 </div>
-                @if ($errors->has('app_domainName'))
+                @if ($errors->has('environment'))
                 <span class="error-block">
                     <i class="fa fa-fw fa-exclamation-triangle" aria-hidden="true"></i>
-                    {{ $errors->first('app_domainName') }}
+                    {{ $errors->first('environment') }}
                 </span>
                 @endif
             </div>

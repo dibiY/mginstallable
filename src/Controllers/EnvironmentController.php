@@ -45,7 +45,6 @@ class EnvironmentController extends Controller
     {
         $envConfig = $this->EnvironmentManager->getEnvContent();
         $domainName=$this->EnvironmentManager->getDomainName($request);
-
         return view('vendor.mginstallable.environment-wizard')->with(['envConfig'=>$envConfig,'domainName'=>$domainName]);
     }
 

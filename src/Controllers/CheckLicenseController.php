@@ -4,6 +4,7 @@ namespace  Dibiy\MgInstallable\Controllers;
 
 use Illuminate\Routing\Controller;
 use Dibiy\MgInstallable\Helpers\CheckLicenseManager;
+use Dibiy\MgInstallable\Helpers\EnvironmentManager;
 use Dibiy\MgInstallable\Helpers\InstalledFileManager;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
@@ -23,6 +24,11 @@ class CheckLicenseController extends Controller
     */
     protected $fileManager;
 
+    /**
+     * @var EnvironmentManager
+     */
+    protected $EnvironmentManager;
+
    
 
     /**
@@ -30,10 +36,14 @@ class CheckLicenseController extends Controller
      */
     public function __construct(
         CheckLicenseManager $checkLicenseManager,
-        InstalledFileManager $fileManager)
+        InstalledFileManager $fileManager,
+        EnvironmentManager $environmentManager
+        )
     {
         $this->checkLicenseManager = $checkLicenseManager;
         $this->fileManager = $fileManager;
+        $this->EnvironmentManager = $environmentManager;
+
 
     }
 
@@ -43,9 +53,10 @@ class CheckLicenseController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function checkLicenseForm()
+    public function checkLicenseForm(Request $request)
     {
-        return view('vendor.mginstallable.check-licenseForm')->with(['error_message'=>null]);
+        $domainName=$this->EnvironmentManager->getDomainName($request);
+        return view('vendor.mginstallable.check-licenseForm')->with(['error_message'=>null,'domainName'=>$domainName]);
     }
 
     /**

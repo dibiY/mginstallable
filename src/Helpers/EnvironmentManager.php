@@ -84,6 +84,22 @@ class EnvironmentManager
         return $message;
     }
 
+    public function getDomainName(Request $request)
+    {
+        $fullUrl = $request->fullUrl();
+
+        // Parse the URL to extract the host (domain)
+        $parsedUrl = parse_url($fullUrl);
+        $domain="";
+        if (isset($parsedUrl['host'])) {
+            $domain = $parsedUrl['host'];
+            // If you want to remove www. from the domain, you can use the following line:
+            $domain = preg_replace('/^www\./', '', $domain);
+            return $domain;
+        } 
+        return $domain;
+    }
+
     /**
      * Save the form content to the .env file.
      *
@@ -93,10 +109,10 @@ class EnvironmentManager
     public function saveFileWizard(Request $request)
     {
         $results = trans('installer_messages.environment.success');
-
+        $domain=$this->getDomainName($request);
         $envFileData =
             'APP_NAME=\'' . $request->app_name . "'\n" .
-            'DOMAIN_NAME=\''. $request->app_domainName."'\n".
+            'DOMAIN_NAME=\'' . $domain . "'\n" .
             'APP_ENV=' . $request->environment . "\n" .
             'APP_KEY=' . 'base64:' . base64_encode(Str::random(32)) . "\n" .
             'APP_DEBUG=' . $request->app_debug . "\n" .

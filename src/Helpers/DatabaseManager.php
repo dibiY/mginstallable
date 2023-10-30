@@ -60,7 +60,7 @@ class DatabaseManager
 
     private function execDumpDB(BufferedOutput $outputLog){
         try {
-            Artisan::call('DumpDB:import', ['--force' => false], $outputLog);
+            Artisan::call('DumpDB:import');
         } catch (Exception $e) {
             return $this->response($e->getMessage(), 'error', $outputLog);
         }
